@@ -333,5 +333,6 @@ MIT License
 ---
 
 # 👨‍💻 Author
+Abdullahi Bundi
 
 Built with ❤️ using Python, KivyMD, FastAPI, MQTT, and PostgreSQL.
