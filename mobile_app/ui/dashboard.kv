@@ -1,0 +1,48 @@
+<DashboardScreen>
+
+MDBoxLayout:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        title: "Smart Home Dashboard"
+        elevation: 4
+
+    ScrollView:
+
+        MDGridLayout:
+            cols: 2
+            adaptive_height: True
+            padding: "10dp"
+            spacing: "10dp"
+
+            MDCard:
+                radius: [20]
+                padding: "20dp"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+
+                    MDLabel:
+                        text: "Temperature"
+                        halign: "center"
+
+                    MDLabel:
+                        text: "27°C"
+                        font_style: "H3"
+                        halign: "center"
+
+            MDCard:
+                radius: [20]
+                padding: "20dp"
+
+                MDBoxLayout:
+                    orientation: "vertical"
+
+                    MDLabel:
+                        text: "Humidity"
+                        halign: "center"
+
+                    MDLabel:
+                        text: "65%"
+                        font_style: "H3"
+                        halign: "center"

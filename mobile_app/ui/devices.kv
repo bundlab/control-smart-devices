@@ -1,0 +1,25 @@
+<DevicesScreen>
+
+MDBoxLayout:
+    orientation: "vertical"
+    padding: "20dp"
+    spacing: "15dp"
+
+    MDTopAppBar:
+        title: "Devices"
+
+    MDRaisedButton:
+        text: "Light ON"
+        on_release: root.light_on()
+
+    MDRaisedButton:
+        text: "Light OFF"
+        on_release: root.light_off()
+
+    MDRaisedButton:
+        text: "Fan ON"
+        on_release: root.fan_on()
+
+    MDRaisedButton:
+        text: "Fan OFF"
+        on_release: root.fan_off()

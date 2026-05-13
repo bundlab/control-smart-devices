@@ -1,0 +1,26 @@
+<LoginScreen>
+
+MDBoxLayout:
+    orientation: "vertical"
+    padding: "20dp"
+    spacing: "20dp"
+
+    MDLabel:
+        text: "Smart Home Login"
+        halign: "center"
+        font_style: "H4"
+
+    MDTextField:
+        id: username
+        hint_text: "Username"
+
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        password: True
+
+    MDRaisedButton:
+        text: "Login"
+        pos_hint: {"center_x": .5}
+        on_release:
+            root.login(username.text, password.text)

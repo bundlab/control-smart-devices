@@ -1,0 +1,26 @@
+version: "3"
+
+services:
+
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+
+  postgres:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: smart_home
+
+  mqtt:
+    image: eclipse-mosquitto
+    ports:
+      - "1883:1883"
+
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"

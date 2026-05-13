@@ -1,0 +1,19 @@
+<ProfileScreen>
+
+BoxLayout:
+    orientation: "vertical"
+
+    Label:
+        text: "User Profile"
+        font_size: 26
+
+    Label:
+        text: "Username: SmartUser"
+
+    Button:
+        text: "Logout"
+        on_press: root.logout()
+
+    Button:
+        text: "Back"
+        on_press: app.root.current = "home"
