@@ -93,14 +93,18 @@ IF temperature > 30:
 
 ```text
 control-smart-devices/
-
-├── mobile_app/
+├── .github/
+│   └── workflows/
+│       ├── backend-ci.yml
+│       └── mobile-ci.yml
 ├── backend/
-├── iot/
-├── docker-compose.yml
+├── mobile_app/
+├── .env.example
+├── .gitignore
 ├── CONTRIBUTING.md
 ├── README.md
-└── .gitignore
+├── docker-compose.yml
+└── requirements.txt
 ```
 
 ---
