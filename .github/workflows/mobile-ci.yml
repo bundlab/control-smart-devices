@@ -1,0 +1,47 @@
+name: Mobile App CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  mobile:
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: mobile_app
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Upgrade Pip
+        run: |
+          python -m pip install --upgrade pip
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Verify Kivy Imports
+        run: |
+          python -c "import kivy"
+          python -c "import requests"
+          python -c "import paho.mqtt.client"
+
+      - name: Run Syntax Checks
+        run: |
+          python -m compileall app

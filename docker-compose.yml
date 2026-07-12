@@ -1,15 +1,12 @@
-version: "3"
-
-services:
+ services:
 
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "8010:8010"
 
   postgres:
     image: postgres
-    restart: always
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: password
