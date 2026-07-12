@@ -98,6 +98,7 @@ control-smart-devices/
 ├── backend/
 ├── iot/
 ├── docker-compose.yml
+├── CONTRIBUTING.md
 ├── README.md
 └── .gitignore
 ```
