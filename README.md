@@ -102,6 +102,7 @@ control-smart-devices/
 ├── .env.example
 ├── .gitignore
 ├── CONTRIBUTING.md
+├── LICENSE
 ├── README.md
 ├── docker-compose.yml
 └── requirements.txt
