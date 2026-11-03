@@ -191,6 +191,60 @@ http://127.0.0.1:8000
 
 ---
 
+# 🔌 Supported Device Types
+
+The API accepts only the following device types when creating (`POST /devices/`)
+or updating (`PUT /devices/{device_id}`) a device:
+
+| Device Type  |
+|--------------|
+| Light        |
+| Smart Plug   |
+| Fan          |
+| Thermostat   |
+| Camera       |
+| TV           |
+| Sensor       |
+
+Example request:
+
+```json
+{
+  "name": "Living Room Lamp",
+  "type": "Light",
+  "room": "Living Room",
+  "topic": "home/living_room/lamp"
+}
+```
+
+Any other value is rejected with HTTP 422:
+
+```json
+{
+  "name": "Mystery Box",
+  "type": "UnknownDevice",
+  "room": "Attic",
+  "topic": "home/attic/box"
+}
+```
+
+Response (`422 Unprocessable Entity`):
+
+```json
+{
+  "detail": [
+    {
+      "type": "enum",
+      "loc": ["body", "type"],
+      "msg": "Input should be 'Light', 'Smart Plug', 'Fan', 'Thermostat', 'Camera', 'TV' or 'Sensor'",
+      "input": "UnknownDevice"
+    }
+  ]
+}
+```
+
+---
+
 # 📱 Run Mobile App
 
 ```bash

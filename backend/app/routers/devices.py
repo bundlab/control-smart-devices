@@ -33,7 +33,8 @@ def create_device(
     payload: DeviceCreate,
     db: Session = Depends(get_db)
 ):
-    device = Device(**payload.model_dump())
+    # mode="json" serialises the DeviceType enum to its plain string value
+    device = Device(**payload.model_dump(mode="json"))
 
     db.add(device)
     db.commit()
@@ -87,7 +88,8 @@ def update_device(
         )
 
     updates = payload.model_dump(
-        exclude_unset=True
+        exclude_unset=True,
+        mode="json"
     )
 
     for key, value in updates.items():
